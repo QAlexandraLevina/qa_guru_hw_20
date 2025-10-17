@@ -5,7 +5,7 @@ from selene import browser, have
 
 def test_getting_started():
     with allure.step("Проверка заголовка и кнопки добавления языка на первой странице и переход на следующую"):
-        browser.element((AppiumBy.ID, "org.wikipedia.alpha:id/primaryTextView")).should(have.text("The Free Encyclopedia …in over 300 languages"))
+        browser.element((AppiumBy.ID, "org.wikipedia.alpha:id/primaryTextView")).should(have.exact_text("The Free Encyclopedia"))
         browser.element((AppiumBy.ID, "org.wikipedia.alpha:id/addLanguageButton")).should(have.text("Add or edit languages"))
         browser.element((AppiumBy.ID, "org.wikipedia.alpha:id/fragment_onboarding_forward_button")).click()
 
