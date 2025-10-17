@@ -20,6 +20,7 @@ def to_driver_options(context):
         options.set_capability('platformVersion', os.getenv('PLATFORM_VERSION'))
         options.set_capability('appWaitActivity', os.getenv('APP_WAIT_ACTIVITY'))
         options.set_capability('app', os.getenv('APP'))
+        options.set_capability('appium:fullReset', 'true')
         options.set_capability(
         'bstack:options',{
                     "projectName": "Wikipedia project",
@@ -27,7 +28,6 @@ def to_driver_options(context):
                     "sessionName": "BStack test",
                     "userName": os.getenv('BS_USER_NAME'),
                     "accessKey": os.getenv('BS_ACCESS_KEY'),
-                    'fullReset': 'true',
         },
         )
     return options
