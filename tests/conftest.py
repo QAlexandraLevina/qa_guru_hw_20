@@ -37,13 +37,6 @@ def mobile_management(context):
 
     session_id = browser.driver.session_id
 
-    if context == 'bstack':
-        try:
-            browser.driver.execute_script(
-                'browserstack:executor: {"action": "clearAppData", "arguments": {"appId": "org.wikipedia.alpha"}}')
-        except:
-            print("Не удалось очистить данные приложения")
-
     yield
 
     add_screenshot(browser)
