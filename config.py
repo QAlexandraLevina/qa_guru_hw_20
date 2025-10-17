@@ -27,6 +27,7 @@ def to_driver_options(context):
                     "sessionName": "BStack test",
                     "userName": os.getenv('BS_USER_NAME'),
                     "accessKey": os.getenv('BS_ACCESS_KEY'),
+                    'appium:fullReset': 'true',
         },
         )
     return options
