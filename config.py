@@ -14,9 +14,6 @@ def to_driver_options(context):
         options.set_capability('app', os.getenv('APP'))
 
     if context == 'bstack':
-        options.set_capability('fullReset', 'true')
-        options.set_capability('noReset', 'false')
-        options.set_capability('autoGrantPermissions', 'true')
         options.set_capability('remote_url', os.getenv('BS_REMOTE_URL'))
         options.set_capability('deviceName', os.getenv('DEVICE_NAME'))
         options.set_capability('platformName', os.getenv('PLATFORM_NAME'))
