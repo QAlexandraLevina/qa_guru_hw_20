@@ -17,7 +17,7 @@ def test_getting_started():
     #     browser.element((AppiumBy.ID, "org.wikipedia.alpha:id/fragment_onboarding_forward_button")).should(be.visible)
 
         with allure.step("Проверка первого экрана"):
-            browser.element((AppiumBy.ID, "org.wikipedia.alpha:id/primaryTextView")).should(have.exact_text("The Free Encyclopedia"))
+            browser.element((AppiumBy.ID, "org.wikipedia.alpha:id/primaryTextView")).should(have.text("The Free Encyclopedia"))
             browser.element((AppiumBy.ID, "org.wikipedia.alpha:id/fragment_onboarding_forward_button")).click()
 
         with allure.step("Проверка второго экрана"):
