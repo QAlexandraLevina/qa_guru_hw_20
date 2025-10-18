@@ -5,17 +5,6 @@ from selene.core.exceptions import TimeoutException
 
 
 def test_getting_started():
-    # """Поиск Onboarding"""
-    # with allure.step("Проверяем наличие модального окна"):
-    #     try:
-    #         browser.element((AppiumBy.ACCESSIBILITY_ID, "Ok")).click()
-    #
-    #     except TimeoutException:
-    #         pass
-    #
-    # try:
-    #     browser.element((AppiumBy.ID, "org.wikipedia.alpha:id/fragment_onboarding_forward_button")).should(be.visible)
-
         with allure.step("Проверка первого экрана"):
             browser.element((AppiumBy.ID, "org.wikipedia.alpha:id/primaryTextView")).should(have.text("The Free Encyclopedia"))
             browser.element((AppiumBy.ID, "org.wikipedia.alpha:id/fragment_onboarding_forward_button")).click()
@@ -32,6 +21,5 @@ def test_getting_started():
             browser.element((AppiumBy.ID, "org.wikipedia.alpha:id/primaryTextView")).should(have.text("Data & Privacy"))
             browser.element((AppiumBy.ID, "org.wikipedia.alpha:id/fragment_onboarding_done_button")).click()
 
-    # except TimeoutException:
         with allure.step("Проверка главного экрана"):
             browser.element((AppiumBy.ID, 'org.wikipedia.alpha:id/main_toolbar_wordmark')).should(be.visible)
