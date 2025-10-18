@@ -1,7 +1,7 @@
 import allure
 from appium.webdriver.common.appiumby import AppiumBy
 from selene import browser, have, be
-from selenium.common import NoSuchElementException
+from selene.core.exceptions import TimeoutException
 
 
 def test_getting_started():
@@ -10,7 +10,7 @@ def test_getting_started():
         try:
             browser.element((AppiumBy.ACCESSIBILITY_ID, "Ok")).click()
 
-        except NoSuchElementException:
+        except TimeoutException:
             pass
 
     try:
@@ -33,6 +33,6 @@ def test_getting_started():
             browser.element((AppiumBy.ID, "org.wikipedia.alpha:id/primaryTextView")).should(have.text("Data & Privacy"))
             browser.element((AppiumBy.ID, "org.wikipedia.alpha:id/fragment_onboarding_done_button")).click()
 
-    except NoSuchElementException:
+    except TimeoutException:
         with allure.step("Проверка главного экрана"):
             browser.element((AppiumBy.ID, 'org.wikipedia.alpha:id/main_toolbar_wordmark')).should(be.visible)
