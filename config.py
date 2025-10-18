@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 
 load_dotenv('.env.credentials')
 
-def to_driver_options(context):
+def context_manager(context):
     options = UiAutomator2Options()
     if context == 'local_emulator':
         options.set_capability('remote_url', os.getenv('LOCAL_REMOTE_URL'))

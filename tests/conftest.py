@@ -30,10 +30,10 @@ def context(request):
 
 @pytest.fixture(scope='function', autouse=True)
 def mobile_management(context):
-    options = app_config.to_driver_options(context=context)
+    options = app_config.context_manager(context=context)
 
     browser.config.driver = webdriver.Remote(options.get_capability('remote_url'), options=options)
-    browser.config.timeout = float(os.getenv('timeout', '30.0'))
+    browser.config.timeout = float(os.getenv('timeout', '15.0'))
 
     session_id = browser.driver.session_id
 
